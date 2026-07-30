@@ -16,12 +16,12 @@ The structured USD model was created with the [mujoco-usd-converter](https://git
 
 ## License
 
-This model is released under the [Apache-2.0 License](LICENSE).
+This model is released under the [MIT License](LICENSE).
 
-- The **conversion work** — the structured USD layer files (`usd_structured/`)
-  produced by the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter)
-  — is Apache-2.0.
-- The **source geometry (meshes) and physical parameters** are derived from the
-  upstream [Seeed-Projects/reBot-Isaacsim](https://github.com/Seeed-Projects/reBot-Isaacsim)
-  repository. Seeed Studio has confirmed these are released under **Apache-2.0**
-  (cc @ZhuYaoHui1998), so the entire package is consistently Apache-2.0 licensed.
+The **source geometry (meshes) and physical parameters** are derived from the
+upstream [Seeed-Projects/reBot-Isaacsim](https://github.com/Seeed-Projects/reBot-Isaacsim)
+repository, which Seeed Studio releases under the **MIT License**
+(cc @ZhuYaoHui1998). The structured-USD **conversion work** in this package
+(`usd_structured/`, produced by the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter))
+is contributed under the same MIT terms, so the entire package is consistently
+MIT licensed.
