@@ -127,6 +127,7 @@ def Xform "seeed_rebot_devarm"
         {
             double[] newton:inertia = [0.0013304, 0.00213119, 0.00275877, 1e-8, 0, 0]
             uniform bool newton:jointsAddMobility = 1
+            bool newton:selfCollisionEnabled = 0
             point3f physics:centerOfMass = (0.0000028764189, -0.00012230249, 0.024337612)
             float3 physics:diagonalInertia = (0.00275877, 0.00213119, 0.0013304)
             float physics:mass = 1.1774
@@ -210,7 +211,7 @@ def Xform "seeed_rebot_devarm"
                     uniform double mjc:damping = 5
                     uniform double mjc:frictionloss = 0.2
                     float newton:armature = 0.01
-                    float newton:damping = 5
+                    float newton:damping = 0.08726646
                     float newton:friction = 0.2
                     float newton:limitDamping = 1.7453293
                     float newton:limitStiffness = 43.633232
@@ -307,7 +308,7 @@ def Xform "seeed_rebot_devarm"
                         uniform double mjc:damping = 5
                         uniform double mjc:frictionloss = 0.2
                         float newton:armature = 0.01
-                        float newton:damping = 5
+                        float newton:damping = 0.08726646
                         float newton:friction = 0.2
                         float newton:limitDamping = 1.7453293
                         float newton:limitStiffness = 43.633232
@@ -404,7 +405,7 @@ def Xform "seeed_rebot_devarm"
                             uniform double mjc:damping = 5
                             uniform double mjc:frictionloss = 0.2
                             float newton:armature = 0.01
-                            float newton:damping = 5
+                            float newton:damping = 0.08726646
                             float newton:friction = 0.2
                             float newton:limitDamping = 1.7453293
                             float newton:limitStiffness = 43.633232
@@ -475,7 +476,7 @@ def Xform "seeed_rebot_devarm"
                                 uniform double mjc:damping = 2
                                 uniform double mjc:frictionloss = 0.2
                                 float newton:armature = 0.01
-                                float newton:damping = 2
+                                float newton:damping = 0.03490659
                                 float newton:friction = 0.2
                                 float newton:limitDamping = 1.7453293
                                 float newton:limitStiffness = 43.633232
@@ -559,7 +560,7 @@ def Xform "seeed_rebot_devarm"
                                     uniform double mjc:damping = 2
                                     uniform double mjc:frictionloss = 0.2
                                     float newton:armature = 0.01
-                                    float newton:damping = 2
+                                    float newton:damping = 0.03490659
                                     float newton:friction = 0.2
                                     float newton:limitDamping = 1.7453293
                                     float newton:limitStiffness = 43.633232
@@ -617,7 +618,7 @@ def Xform "seeed_rebot_devarm"
                                         uniform double mjc:damping = 2
                                         uniform double mjc:frictionloss = 0.2
                                         float newton:armature = 0.01
-                                        float newton:damping = 2
+                                        float newton:damping = 0.03490659
                                         float newton:friction = 0.2
                                         float newton:limitDamping = 1.7453293
                                         float newton:limitStiffness = 43.633232
