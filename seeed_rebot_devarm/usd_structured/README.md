@@ -18,6 +18,6 @@ The converter does not carry this filtering into USD: no `mjc:contype`/`mjc:cona
 
 The following warnings were emitted during conversion, due to unsupported features in the converter:
 
-```
+```text
 [Warning] [mujoco_usd_converter._impl.convert.warn] keys are not supported
 ```
