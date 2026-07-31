@@ -98,23 +98,23 @@ def Xform "seeed_rebot_devarm"
 
         def MjcActuator "joint_left"
         {
-            uniform double[] mjc:biasPrm = [0, -100, -4, 0, 0, 0, 0, 0, 0, 0]
+            uniform double[] mjc:biasPrm = [0, -1000, -40, 0, 0, 0, 0, 0, 0, 0]
             uniform token mjc:biasType = "affine"
             uniform double mjc:ctrlRange:max = 0.05
             uniform double mjc:forceRange:max = 500
             uniform double mjc:forceRange:min = -500
-            uniform double[] mjc:gainPrm = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform double[] mjc:gainPrm = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             rel mjc:target = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end/gripper_left/joint_left>
         }
 
         def MjcActuator "joint_right"
         {
-            uniform double[] mjc:biasPrm = [0, -100, -4, 0, 0, 0, 0, 0, 0, 0]
+            uniform double[] mjc:biasPrm = [0, -1000, -40, 0, 0, 0, 0, 0, 0, 0]
             uniform token mjc:biasType = "affine"
             uniform double mjc:ctrlRange:max = 0.0715
             uniform double mjc:forceRange:max = 500
             uniform double mjc:forceRange:min = -500
-            uniform double[] mjc:gainPrm = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform double[] mjc:gainPrm = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             rel mjc:target = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end/gripper_right/joint_right>
         }
     }
