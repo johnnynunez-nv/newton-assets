@@ -1,0 +1,757 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "MuJoCo USD Converter v0.4.1"
+    }
+    defaultPrim = "seeed_rebot_devarm"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "seeed_rebot_devarm"
+{
+    def Scope "Geometry"
+    {
+        def Xform "base_link"
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Mesh "base_link_collision_base_link_convex" (
+                displayName = ""
+                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link_convex>
+            )
+            {
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                    interpolation = "constant"
+                )
+                int[] primvars:displayColor:indices = None
+                float[] primvars:displayOpacity = [1] (
+                    interpolation = "constant"
+                )
+                int[] primvars:displayOpacity:indices = None
+                uniform token purpose = "guide"
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Mesh "base_link" (
+                prepend apiSchemas = ["MjcImageableAPI"]
+                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link>
+            )
+            {
+                uniform int mjc:group = 2
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                    interpolation = "constant"
+                )
+                int[] primvars:displayColor:indices = None
+                float[] primvars:displayOpacity = [1] (
+                    interpolation = "constant"
+                )
+                int[] primvars:displayOpacity:indices = None
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Xform "link1"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-0.00034283, -0.00098683, 0.075)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Mesh "link1_collision_link1_convex" (
+                    displayName = ""
+                    prepend references = @./GeometryLibrary.usdc@</Geometry/link1_convex>
+                )
+                {
+                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                        interpolation = "constant"
+                    )
+                    int[] primvars:displayColor:indices = None
+                    float[] primvars:displayOpacity = [1] (
+                        interpolation = "constant"
+                    )
+                    int[] primvars:displayOpacity:indices = None
+                    uniform token purpose = "guide"
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Mesh "link1" (
+                    prepend apiSchemas = ["MjcImageableAPI"]
+                    prepend references = @./GeometryLibrary.usdc@</Geometry/link1>
+                )
+                {
+                    uniform int mjc:group = 2
+                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                        interpolation = "constant"
+                    )
+                    int[] primvars:displayColor:indices = None
+                    float[] primvars:displayOpacity = [1] (
+                        interpolation = "constant"
+                    )
+                    int[] primvars:displayOpacity:indices = None
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Xform "link2"
+                {
+                    quatf xformOp:orient = (0.7071068, -0.7071067, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0.020343, 0.027237, 0.07)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Mesh "link2_collision_link2_convex" (
+                        displayName = ""
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/link2_convex>
+                    )
+                    {
+                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayColor:indices = None
+                        float[] primvars:displayOpacity = [1] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayOpacity:indices = None
+                        uniform token purpose = "guide"
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Mesh "motor_2_3" (
+                        prepend apiSchemas = ["MjcImageableAPI"]
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/motor_2_3>
+                    )
+                    {
+                        uniform int mjc:group = 2
+                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayColor:indices = None
+                        float[] primvars:displayOpacity = [1] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayOpacity:indices = None
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Mesh "cnc2" (
+                        prepend apiSchemas = ["MjcImageableAPI"]
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/cnc2>
+                    )
+                    {
+                        uniform int mjc:group = 2
+                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayColor:indices = None
+                        float[] primvars:displayOpacity = [1] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayOpacity:indices = None
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Mesh "pla2_black" (
+                        prepend apiSchemas = ["MjcImageableAPI"]
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/pla2_black>
+                    )
+                    {
+                        uniform int mjc:group = 2
+                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayColor:indices = None
+                        float[] primvars:displayOpacity = [1] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayOpacity:indices = None
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Mesh "pla2_green" (
+                        prepend apiSchemas = ["MjcImageableAPI"]
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/pla2_green>
+                    )
+                    {
+                        uniform int mjc:group = 2
+                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayColor:indices = None
+                        float[] primvars:displayOpacity = [1] (
+                            interpolation = "constant"
+                        )
+                        int[] primvars:displayOpacity:indices = None
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "link3"
+                    {
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-0.236, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Mesh "link3_collision_link3_convex" (
+                            displayName = ""
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/link3_convex>
+                        )
+                        {
+                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayColor:indices = None
+                            float[] primvars:displayOpacity = [1] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayOpacity:indices = None
+                            uniform token purpose = "guide"
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Mesh "cnc3" (
+                            prepend apiSchemas = ["MjcImageableAPI"]
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/cnc3>
+                        )
+                        {
+                            uniform int mjc:group = 2
+                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayColor:indices = None
+                            float[] primvars:displayOpacity = [1] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayOpacity:indices = None
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Mesh "motor_4" (
+                            prepend apiSchemas = ["MjcImageableAPI"]
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/motor_4>
+                        )
+                        {
+                            uniform int mjc:group = 2
+                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayColor:indices = None
+                            float[] primvars:displayOpacity = [1] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayOpacity:indices = None
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Mesh "pla3_black" (
+                            prepend apiSchemas = ["MjcImageableAPI"]
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/pla3_black>
+                        )
+                        {
+                            uniform int mjc:group = 2
+                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayColor:indices = None
+                            float[] primvars:displayOpacity = [1] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayOpacity:indices = None
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Mesh "pla3_green" (
+                            prepend apiSchemas = ["MjcImageableAPI"]
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/pla3_green>
+                        )
+                        {
+                            uniform int mjc:group = 2
+                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayColor:indices = None
+                            float[] primvars:displayOpacity = [1] (
+                                interpolation = "constant"
+                            )
+                            int[] primvars:displayOpacity:indices = None
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "link4"
+                        {
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0.228, -0.072746, 0.0045)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                            def Mesh "link4_collision_link4_convex" (
+                                displayName = ""
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/link4_convex>
+                            )
+                            {
+                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayColor:indices = None
+                                float[] primvars:displayOpacity = [1] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayOpacity:indices = None
+                                uniform token purpose = "guide"
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Mesh "motor_5" (
+                                prepend apiSchemas = ["MjcImageableAPI"]
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/motor_5>
+                            )
+                            {
+                                uniform int mjc:group = 2
+                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayColor:indices = None
+                                float[] primvars:displayOpacity = [1] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayOpacity:indices = None
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Mesh "cnc4" (
+                                prepend apiSchemas = ["MjcImageableAPI"]
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/cnc4>
+                            )
+                            {
+                                uniform int mjc:group = 2
+                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayColor:indices = None
+                                float[] primvars:displayOpacity = [1] (
+                                    interpolation = "constant"
+                                )
+                                int[] primvars:displayOpacity:indices = None
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Xform "link5"
+                            {
+                                quatf xformOp:orient = (0.7071068, -0.7071067, 0, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0.087, -0.048, -0.03075)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                def Mesh "link5_collision_link5_convex" (
+                                    displayName = ""
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/link5_convex>
+                                )
+                                {
+                                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayColor:indices = None
+                                    float[] primvars:displayOpacity = [1] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayOpacity:indices = None
+                                    uniform token purpose = "guide"
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Mesh "motor_6" (
+                                    prepend apiSchemas = ["MjcImageableAPI"]
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/motor_6>
+                                )
+                                {
+                                    uniform int mjc:group = 2
+                                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayColor:indices = None
+                                    float[] primvars:displayOpacity = [1] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayOpacity:indices = None
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Mesh "cnc5" (
+                                    prepend apiSchemas = ["MjcImageableAPI"]
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/cnc5>
+                                )
+                                {
+                                    uniform int mjc:group = 2
+                                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayColor:indices = None
+                                    float[] primvars:displayOpacity = [1] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayOpacity:indices = None
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Mesh "pla5_green" (
+                                    prepend apiSchemas = ["MjcImageableAPI"]
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/pla5_green>
+                                )
+                                {
+                                    uniform int mjc:group = 2
+                                    color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayColor:indices = None
+                                    float[] primvars:displayOpacity = [1] (
+                                        interpolation = "constant"
+                                    )
+                                    int[] primvars:displayOpacity:indices = None
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Xform "link6"
+                                {
+                                    quatf xformOp:orient = (0.7071068, 0, 0.7071067, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0.0365, 0, 0.048)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                    def Mesh "link6_collision_link6_convex" (
+                                        displayName = ""
+                                        prepend references = @./GeometryLibrary.usdc@</Geometry/link6_convex>
+                                    )
+                                    {
+                                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                            interpolation = "constant"
+                                        )
+                                        int[] primvars:displayColor:indices = None
+                                        float[] primvars:displayOpacity = [1] (
+                                            interpolation = "constant"
+                                        )
+                                        int[] primvars:displayOpacity:indices = None
+                                        uniform token purpose = "guide"
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                    }
+
+                                    def Mesh "link6" (
+                                        prepend apiSchemas = ["MjcImageableAPI"]
+                                        prepend references = @./GeometryLibrary.usdc@</Geometry/link6>
+                                    )
+                                    {
+                                        uniform int mjc:group = 2
+                                        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                            interpolation = "constant"
+                                        )
+                                        int[] primvars:displayColor:indices = None
+                                        float[] primvars:displayOpacity = [1] (
+                                            interpolation = "constant"
+                                        )
+                                        int[] primvars:displayOpacity:indices = None
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                    }
+
+                                    def Xform "gripper_end"
+                                    {
+                                        quatf xformOp:orient = (6.123234e-17, 0.70710677, -1.867142e-17, 0.70710677)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0.16621)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                        def Mesh "gripper_end_collision_gripper_end_convex" (
+                                            displayName = ""
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/gripper_end_convex>
+                                        )
+                                        {
+                                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayColor:indices = None
+                                            float[] primvars:displayOpacity = [1] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayOpacity:indices = None
+                                            uniform token purpose = "guide"
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+
+                                        def Mesh "pla7_green" (
+                                            prepend apiSchemas = ["MjcImageableAPI"]
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/pla7_green>
+                                        )
+                                        {
+                                            uniform int mjc:group = 2
+                                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayColor:indices = None
+                                            float[] primvars:displayOpacity = [1] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayOpacity:indices = None
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+
+                                        def Mesh "cnc7" (
+                                            prepend apiSchemas = ["MjcImageableAPI"]
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/cnc7>
+                                        )
+                                        {
+                                            uniform int mjc:group = 2
+                                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayColor:indices = None
+                                            float[] primvars:displayOpacity = [1] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayOpacity:indices = None
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+
+                                        def Mesh "motor_7" (
+                                            prepend apiSchemas = ["MjcImageableAPI"]
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/motor_7>
+                                        )
+                                        {
+                                            uniform int mjc:group = 2
+                                            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayColor:indices = None
+                                            float[] primvars:displayOpacity = [1] (
+                                                interpolation = "constant"
+                                            )
+                                            int[] primvars:displayOpacity:indices = None
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+
+                                        def Xform "gripper_left"
+                                        {
+                                            quatf xformOp:orient = (0.5, 0.5, -0.5, 0.5)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (-0.041939, -0.000073385, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                            def Mesh "gripper_left_collision_gripper_left_convex" (
+                                                displayName = ""
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/gripper_left_convex>
+                                            )
+                                            {
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                uniform token purpose = "guide"
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+
+                                            def Mesh "pla_left" (
+                                                prepend apiSchemas = ["MjcImageableAPI"]
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/pla_left>
+                                            )
+                                            {
+                                                uniform int mjc:group = 2
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+
+                                            def Mesh "cnc_left" (
+                                                prepend apiSchemas = ["MjcImageableAPI"]
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/cnc_left>
+                                            )
+                                            {
+                                                uniform int mjc:group = 2
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+                                        }
+
+                                        def Xform "gripper_right"
+                                        {
+                                            quatf xformOp:orient = (-0.5, 0.5, 0.5, 0.5)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (-0.041939, 0.000073385, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                            def Mesh "gripper_right_collision_gripper_right_convex" (
+                                                displayName = ""
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/gripper_right_convex>
+                                            )
+                                            {
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                uniform token purpose = "guide"
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+
+                                            def Mesh "pla_right" (
+                                                prepend apiSchemas = ["MjcImageableAPI"]
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/pla_right>
+                                            )
+                                            {
+                                                uniform int mjc:group = 2
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+
+                                            def Mesh "cnc_right" (
+                                                prepend apiSchemas = ["MjcImageableAPI"]
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/cnc_right>
+                                            )
+                                            {
+                                                uniform int mjc:group = 2
+                                                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayColor:indices = None
+                                                float[] primvars:displayOpacity = [1] (
+                                                    interpolation = "constant"
+                                                )
+                                                int[] primvars:displayOpacity:indices = None
+                                                quatf xformOp:orient = (1, 0, 0, 0)
+                                                float3 xformOp:scale = (1, 1, 1)
+                                                double3 xformOp:translate = (0, 0, 0)
+                                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
