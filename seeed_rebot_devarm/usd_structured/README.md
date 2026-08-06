@@ -1,6 +1,8 @@
 # About Structured USD Robots
 
-This asset was created with the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter), having converted the source MJCF from the MuJoCo Menagerie as of [this commit](https://github.com/johnnynunez/mujoco_menagerie/blob/08ea356c1bf6ad38d8569ce5891e905b0dc55b8a/seeed_rebot_devarm/seeed_rebot_devarm.xml), proposed upstream in [mujoco_menagerie#300](https://github.com/google-deepmind/mujoco_menagerie/pull/300). The conversion results are unchanged here.
+This asset was created with the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter), having converted the source MJCF from the MuJoCo Menagerie as of [this commit](https://github.com/google-deepmind/mujoco_menagerie/blob/08ea356c1bf6ad38d8569ce5891e905b0dc55b8a/seeed_rebot_devarm/seeed_rebot_devarm.xml). The conversion results are unchanged here.
+
+That commit is the head of [mujoco_menagerie#300](https://github.com/google-deepmind/mujoco_menagerie/pull/300), which is still open, so the source is pinned to an immutable SHA rather than to a branch. Once #300 merges this should be repinned to the resulting Menagerie commit, and the asset reconverted if review changed the model.
 
 [This layer](./seeed_rebot_devarm.usda) is the main entrypoint for the asset, called the Asset Interface. Consuming users/code/applications should load this file to access the fully composed USD Robot. The interface is a lightweight plain text layer & the bulk of the robot is behind a Payload, enabling delayed-load access to the asset.
 
