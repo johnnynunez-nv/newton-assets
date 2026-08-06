@@ -1,6 +1,6 @@
 # About Structured USD Robots
 
-This asset was created with the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter), having converted the source MJCF from the MuJoCo Menagerie (`seeed_rebot_devarm/seeed_rebot_devarm.xml`, [PR #300](https://github.com/google-deepmind/mujoco_menagerie/pull/300), which carries the full link inertia tensors, the hardware-derived actuator gains, and the single-motor gripper coupling). The conversion results are unchanged here.
+This asset was created with the [mujoco-usd-converter](https://github.com/newton-physics/mujoco-usd-converter), having converted the source MJCF from the MuJoCo Menagerie as of [this commit](https://github.com/johnnynunez/mujoco_menagerie/blob/08ea356c1bf6ad38d8569ce5891e905b0dc55b8a/seeed_rebot_devarm/seeed_rebot_devarm.xml), proposed upstream in [mujoco_menagerie#300](https://github.com/google-deepmind/mujoco_menagerie/pull/300). The conversion results are unchanged here.
 
 [This layer](./seeed_rebot_devarm.usda) is the main entrypoint for the asset, called the Asset Interface. Consuming users/code/applications should load this file to access the fully composed USD Robot. The interface is a lightweight plain text layer & the bulk of the robot is behind a Payload, enabling delayed-load access to the asset.
 
@@ -10,18 +10,7 @@ Larger structural changes (e.g. adding new bodies or colliders) would require ed
 
 The body hierarchy in this asset is nested, with child bodies specified relative to their parent body, just like the original MJCF. This is a newer feature in OpenUSD & requires at least USD v25.11 for full support, though it is possible to parse nested bodies in older runtimes as well.
 
-## Validation
-
-Loaded into Newton via `ModelBuilder.add_usd` and compared against the source MJCF loaded natively:
-
-| check | result |
-| --- | --- |
-| degrees of freedom | 8 |
-| total mass | 6.008505 kg, exact match |
-| max per-body mass error | 0 |
-| max per-body inertia error | 0 |
-| max gravity torque error g(q), 6 poses | 4.8e-06 N m |
-| 600 steps under `SolverMuJoCo` | stable, all states finite, 1 equality constraint active |
+The source MJCF leaves `solreflimit` at MuJoCo's implicit default, so no `mjc:solreflimit` is authored here and `SolverMuJoCo` applies that default.
 
 ## Self-Collision
 
@@ -33,15 +22,9 @@ The converter does not carry this filtering into USD: no `mjc:contype`/`mjc:cona
 
 The two fingers are not independent degrees of freedom on the physical arm: a single motor drives two opposed racks through one pinion, so their travel is rigidly 1:1. The source MJCF expresses this with an `<equality joint>` constraint, which the converter carries into USD as `NewtonMimicAPI` (`newton:mimicJoint`) alongside `MjcEqualityJointAPI` on `joint_left`.
 
-Consuming runtimes must honor that coupling. Without it the two prismatic joints are free to drift apart whenever the arm accelerates, and the jaws no longer hold their commanded opening. Newton imports the constraint from `NewtonMimicAPI` and reports one mimic constraint on load; importing it from `MjcEqualityJointAPI` alone requires [newton#3761](https://github.com/newton-physics/newton/pull/3761) or newer.
+Consuming runtimes must honor that coupling. Without it the two prismatic joints are free to drift apart whenever the arm accelerates, and the jaws no longer hold their commanded opening.
 
 The finger drive gains follow from the same transmission rather than being tuned by hand: the pinion radius is 7.353 mm/rad, so the actuator's rotary stiffness and its 14 Nm torque limit appear at the finger as ~925 kN/m and 1904 N respectively. `mjc:gainPrm` is capped at the stiffest value that remains stable at the solver step, with the bias term set for a damping ratio of 1 against the 0.0752 kg finger.
-
-## Joint limit gains
-
-The converter no longer derives `newton:limitStiffness` / `newton:limitDamping` from MuJoCo's normalized `solreflimit`, per the effort-space resolution of [newton#3762](https://github.com/newton-physics/newton/issues/3762); `mjc:solreflimit` carries the source values exactly.
-
-The runtime half of that issue, items 4 and 5, is still open and visible here: `add_usd` leaves `joint_limit_ke` / `joint_limit_kd` at the `ModelBuilder` engine defaults (10000 / 10) rather than the MuJoCo-equivalent defaults (2500 / 100) the MJCF importer applies, so `SolverMuJoCo` compiles a different `jnt_solref` from this asset than from the source MJCF (`max |jnt_solref - native| = 0.96`). This is a property of the USD import path rather than of this asset: forcing those two model fields to 2500 / 100 after `add_usd` recovers the intended behaviour in the meantime.
 
 ## Warnings
 
