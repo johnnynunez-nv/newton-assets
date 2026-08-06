@@ -1,7 +1,7 @@
 #usda 1.0
 (
     customLayerData = {
-        string creator = "MuJoCo USD Converter v0.4.1"
+        string creator = "MuJoCo USD Converter v0.5.0"
     }
     defaultPrim = "seeed_rebot_devarm"
     kilogramsPerUnit = 1
@@ -185,8 +185,6 @@ def Xform "seeed_rebot_devarm"
                     float newton:armature = 0.01
                     float newton:damping = 0.08726646
                     float newton:friction = 0.2
-                    float newton:limitDamping = 1.7453293
-                    float newton:limitStiffness = 43.633232
                     uniform token physics:axis = "Z"
                     rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link>
                     rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1>
@@ -230,8 +228,6 @@ def Xform "seeed_rebot_devarm"
                         float newton:armature = 0.01
                         float newton:damping = 0.08726646
                         float newton:friction = 0.2
-                        float newton:limitDamping = 1.7453293
-                        float newton:limitStiffness = 43.633232
                         uniform token physics:axis = "Z"
                         rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1>
                         rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2>
@@ -275,8 +271,6 @@ def Xform "seeed_rebot_devarm"
                             float newton:armature = 0.01
                             float newton:damping = 0.08726646
                             float newton:friction = 0.2
-                            float newton:limitDamping = 1.7453293
-                            float newton:limitStiffness = 43.633232
                             uniform token physics:axis = "Z"
                             rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2>
                             rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3>
@@ -320,8 +314,6 @@ def Xform "seeed_rebot_devarm"
                                 float newton:armature = 0.01
                                 float newton:damping = 0.034906585
                                 float newton:friction = 0.2
-                                float newton:limitDamping = 1.7453293
-                                float newton:limitStiffness = 43.633232
                                 uniform token physics:axis = "Z"
                                 rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3>
                                 rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4>
@@ -365,8 +357,6 @@ def Xform "seeed_rebot_devarm"
                                     float newton:armature = 0.01
                                     float newton:damping = 0.034906585
                                     float newton:friction = 0.2
-                                    float newton:limitDamping = 1.7453293
-                                    float newton:limitStiffness = 43.633232
                                     uniform token physics:axis = "Z"
                                     rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4>
                                     rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5>
@@ -410,8 +400,6 @@ def Xform "seeed_rebot_devarm"
                                         float newton:armature = 0.01
                                         float newton:damping = 0.034906585
                                         float newton:friction = 0.2
-                                        float newton:limitDamping = 1.7453293
-                                        float newton:limitStiffness = 43.633232
                                         uniform token physics:axis = "Z"
                                         rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5>
                                         rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6>
@@ -489,8 +477,6 @@ def Xform "seeed_rebot_devarm"
                                                 float newton:armature = 0.01
                                                 float newton:damping = 1
                                                 float newton:friction = 0.2
-                                                float newton:limitDamping = 100
-                                                float newton:limitStiffness = 2500
                                                 rel newton:mimicJoint = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end/gripper_right/joint_right>
                                                 uniform token physics:axis = "Z"
                                                 rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end>
@@ -536,8 +522,6 @@ def Xform "seeed_rebot_devarm"
                                                 float newton:armature = 0.01
                                                 float newton:damping = 1
                                                 float newton:friction = 0.2
-                                                float newton:limitDamping = 100
-                                                float newton:limitStiffness = 2500
                                                 uniform token physics:axis = "Z"
                                                 rel physics:body0 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end>
                                                 rel physics:body1 = </seeed_rebot_devarm/Geometry/base_link/link1/link2/link3/link4/link5/link6/gripper_end/gripper_right>
