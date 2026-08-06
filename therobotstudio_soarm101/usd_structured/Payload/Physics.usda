@@ -1,7 +1,7 @@
 #usda 1.0
 (
     customLayerData = {
-        string creator = "MuJoCo USD Converter v0.4.1"
+        string creator = "MuJoCo USD Converter v0.5.0"
     }
     defaultPrim = "so101"
     kilogramsPerUnit = 1
@@ -182,8 +182,6 @@ def Xform "so101"
                     float newton:armature = 0.028
                     float newton:damping = 0.010471975
                     float newton:friction = 0.052
-                    float newton:limitDamping = 1.7453293
-                    float newton:limitStiffness = 43.633232
                     uniform token physics:axis = "Z"
                     rel physics:body0 = </so101/Geometry/base>
                     rel physics:body1 = </so101/Geometry/base/shoulder>
@@ -237,8 +235,6 @@ def Xform "so101"
                         float newton:armature = 0.028
                         float newton:damping = 0.010471975
                         float newton:friction = 0.052
-                        float newton:limitDamping = 1.7453293
-                        float newton:limitStiffness = 43.633232
                         uniform token physics:axis = "Z"
                         rel physics:body0 = </so101/Geometry/base/shoulder>
                         rel physics:body1 = </so101/Geometry/base/shoulder/upper_arm>
@@ -292,8 +288,6 @@ def Xform "so101"
                             float newton:armature = 0.028
                             float newton:damping = 0.010471975
                             float newton:friction = 0.052
-                            float newton:limitDamping = 1.7453293
-                            float newton:limitStiffness = 43.633232
                             uniform token physics:axis = "Z"
                             rel physics:body0 = </so101/Geometry/base/shoulder/upper_arm>
                             rel physics:body1 = </so101/Geometry/base/shoulder/upper_arm/lower_arm>
@@ -347,8 +341,6 @@ def Xform "so101"
                                 float newton:armature = 0.028
                                 float newton:damping = 0.010471975
                                 float newton:friction = 0.052
-                                float newton:limitDamping = 1.7453293
-                                float newton:limitStiffness = 43.633232
                                 uniform token physics:axis = "Z"
                                 rel physics:body0 = </so101/Geometry/base/shoulder/upper_arm/lower_arm>
                                 rel physics:body1 = </so101/Geometry/base/shoulder/upper_arm/lower_arm/wrist>
@@ -543,8 +535,6 @@ def Xform "so101"
                                     float newton:armature = 0.028
                                     float newton:damping = 0.010471975
                                     float newton:friction = 0.052
-                                    float newton:limitDamping = 1.7453293
-                                    float newton:limitStiffness = 43.633232
                                     uniform token physics:axis = "Z"
                                     rel physics:body0 = </so101/Geometry/base/shoulder/upper_arm/lower_arm/wrist>
                                     rel physics:body1 = </so101/Geometry/base/shoulder/upper_arm/lower_arm/wrist/gripper>
@@ -730,8 +720,6 @@ def Xform "so101"
                                         float newton:armature = 0.028
                                         float newton:damping = 0.010471975
                                         float newton:friction = 0.052
-                                        float newton:limitDamping = 1.7453293
-                                        float newton:limitStiffness = 43.633232
                                         uniform token physics:axis = "Z"
                                         rel physics:body0 = </so101/Geometry/base/shoulder/upper_arm/lower_arm/wrist/gripper>
                                         rel physics:body1 = </so101/Geometry/base/shoulder/upper_arm/lower_arm/wrist/gripper/moving_jaw_so101_v1>
